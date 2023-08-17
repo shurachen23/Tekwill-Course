@@ -2,11 +2,23 @@
 <html>
     <head>
         <script>
- $('#password, #confirm_password').on('keyup', function () {
-  if ($('#password').val() == $('#confirm_password').val()) {
-    $('#message').html('Matching').css('color', 'green');
-  } else 
-    $('#message').html('Not Matching').css('color', 'red');
+const fileInput = document.getElementById('file-input');
+
+const statusElement = document.getElementById('status');
+
+fileInput.addEventListener('change', event => {
+  const file = fileInput.files[0];
+
+  const maxFileSizeInMB = 2;
+  const maxFileSizeInKB = 1024 * 1024 * maxFileSizeInMB;
+
+  if (file.size > maxFileSizeInKB) {
+    statusElement.innerHTML = `Please select a file that is ${maxFileSizeInMB}MB or less.`;
+  } else {
+    statusElement.innerHTML = 'File uploaded successfully!';
+
+    // upload file to remote server here
+  }
 });
         </script>
     </head>
@@ -20,11 +32,11 @@
   <fieldset>
     <legend>Basic User Information:</legend>
     <label for="fname">Full Name:</label><br>
-    <input type="text" id="fname" name="fname" value="Alexandr Terzi"><br>
+    <input type="text" id="fname" name="fname" value="Alexandr Terzi" required><br>
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" value="example@gmail.com"><br>
+    <input type="email" id="email" name="email" value="example@gmail.com" pattern=".+@globex\.com" required><br>
     <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" minlength="8"><br>
+    <input type="password" id="password" name="password" minlength="8" required><br>
     <label for="confirm_password">Confirm password:</label><br>
     <input type="password" id="confirm_password" name="confirm_password" minlength="8"> <br><br>
     <p>Please select your gender:</p>
@@ -70,11 +82,6 @@
   <input type="color" id="favcolor" name="favcolor" value="#000"><br><br>
  </fieldset>
  <fieldset>
-    <legend>Upload a Profile Picture:</legend>
-    <label for="myfile">Upload an image:</label>
-    <input type="file" id="myfile" name="myfile"><br><br>
- </fieldset>
- <fieldset>
     <legend>Additional Details:</legend>
     <label for="additional">How did you hear about us?</label>
     <select name="add_info" id="add_info">
@@ -85,6 +92,15 @@
       <label for="feedback">Feedback/Comments:</label><br>
     <textarea rows="3" cols="30" name="feedback" form="feedback"></textarea><br>
  </fieldset>
+ <fieldset>
+    <legend>Profile:</legend>
+    <label for="file-input">Upload an image:</label>
+    <input type="file" id="file-input" name="file-input" accept="image/png, image/jpeg"><br>
+ <label for="homepage">Web Site:</label>
+ <input type="url" id="homepage" name="homepage"><br>
+ <label for="vol">User's experience level with HTML:</label>
+  <input type="range" id="vol" name="vol" min="0" max="10"> <br>
+</fieldset>
  <br> <input type="submit" value="Submit">
  <input type="reset" value="Reset">
 </form>
