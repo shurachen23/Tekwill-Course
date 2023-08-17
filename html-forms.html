@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+ $('#password, #confirm_password').on('keyup', function () {
+  if ($('#password').val() == $('#confirm_password').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+        </script>
+    </head>
+<body>
+
+<h2>HTML Forms Assignment</h2>
+
+
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Basic User Information:</legend>
+    <label for="fname">Full Name:</label><br>
+    <input type="text" id="fname" name="fname" value="Alexandr Terzi"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" value="example@gmail.com"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" minlength="8"><br>
+    <label for="confirm_password">Confirm password:</label><br>
+    <input type="password" id="confirm_password" name="confirm_password" minlength="8"> <br><br>
+    <p>Please select your gender:</p>
+    <input type="radio" id="male" name="male" value="Male">
+ <label for="male">Male</label><br>
+ <input type="radio" id="female" name="female" value="Female">
+ <label for="female">Female</label><br>
+ <input type="radio" id="other" name="other" value="Other">
+ <label for="other">other</label>
+ <br><br>
+ <label for="birthday">Date of Birth:</label>
+ <input type="date" id="birthday" name="birthday">
+ <br><br> <input type="submit" value="Submit">
+ </fieldset>
+</form>
+
+</body>
+</html>
