@@ -74,8 +74,19 @@
     <label for="myfile">Upload an image:</label>
     <input type="file" id="myfile" name="myfile"><br><br>
  </fieldset>
-
+ <fieldset>
+    <legend>Additional Details:</legend>
+    <label for="additional">How did you hear about us?</label>
+    <select name="add_info" id="add_info">
+        <option value="internet">Internet</option>
+        <option value="friend">Friend</option>
+        <option value="advertisement">"Advertisement</option>
+      </select><br>
+      <label for="feedback">Feedback/Comments:</label><br>
+    <textarea rows="3" cols="30" name="feedback" form="feedback"></textarea><br>
+ </fieldset>
  <br> <input type="submit" value="Submit">
+ <input type="reset" value="Reset">
 </form>
 
 </body>
