@@ -1,32 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-const fileInput = document.getElementById('file-input');
-
-const statusElement = document.getElementById('status');
-
-fileInput.addEventListener('change', event => {
-  const file = fileInput.files[0];
-
-  const maxFileSizeInMB = 2;
-  const maxFileSizeInKB = 1024 * 1024 * maxFileSizeInMB;
-
-  if (file.size > maxFileSizeInKB) {
-    statusElement.innerHTML = `Please select a file that is ${maxFileSizeInMB}MB or less.`;
-  } else {
-    statusElement.innerHTML = 'File uploaded successfully!';
-
-    // upload file to remote server here
-  }
-});
-        </script>
     </head>
 <body>
 
 <h2>HTML Forms Assignment</h2>
-
-
 
 <form action="/action_page.php">
   <fieldset>
@@ -35,15 +13,15 @@ fileInput.addEventListener('change', event => {
     <input type="text" id="fname" name="fname" value="Alexandr Terzi" required><br>
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" value="example@gmail.com" pattern=".+@globex\.com" required><br>
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" minlength="8" required><br>
-    <label for="confirm_password">Confirm password:</label><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="8" required>
+    <label for="confirm_password">Confirm password:</label>
     <input type="password" id="confirm_password" name="confirm_password" minlength="8"> <br><br>
-    <p>Please select your gender:</p>
+    <label for="gender">Gender:</label>
     <input type="radio" id="male" name="male" value="Male">
- <label for="male">Male</label><br>
+ <label for="male">Male</label>
  <input type="radio" id="female" name="female" value="Female">
- <label for="female">Female</label><br>
+ <label for="female">Female</label>
  <input type="radio" id="other" name="other" value="Other">
  <label for="other">other</label>
  <br><br>
@@ -99,7 +77,8 @@ fileInput.addEventListener('change', event => {
  <label for="homepage">Web Site:</label>
  <input type="url" id="homepage" name="homepage"><br>
  <label for="vol">User's experience level with HTML:</label>
-  <input type="range" id="vol" name="vol" min="0" max="10"> <br>
+  <input type="range" id="vol" name="vol" min="0" max="10">
+  <br>
 </fieldset>
  <br> <input type="submit" value="Submit">
  <input type="reset" value="Reset">
