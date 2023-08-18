@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>HTML Forms Assignment</title>
+    </head>
+<body>
+
+<h2>HTML Forms Assignment</h2>
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Basic User Information:</legend>
+    <label for="fname">Full Name:</label><br>
+    <input type="text" id="fname" name="fname" value="Alexandr Terzi" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" value="example@gmail.com" pattern=".+@globex\.com" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="8" required>
+    <label for="confirm_password">Confirm password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" minlength="8"> <br><br>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="male" value="Male">
+ <label for="male">Male</label>
+ <input type="radio" id="female" name="female" value="Female">
+ <label for="female">Female</label>
+ <input type="radio" id="other" name="other" value="Other">
+ <label for="other">other</label> <br>
+ <label for="birthday">Date of Birth:</label>
+ <input type="date" id="birthday" name="birthday"> <br>
+ </fieldset>
+ <fieldset>
+    <legend>Address Information:</legend>
+    <label for="address">Street Address:</label>
+    <textarea rows="4" cols="50" name="address" form="address"></textarea><br>
+    <label for="country">Choose country:</label>
+  <select name="country" id="country">
+    <option value="moldova">Moldova</option>
+    <option value="bali">Bali</option>
+    <option value="france">France</option>
+    <option value="germmany">Germany</option>
+    <option value="italy">Italy</option>
+  </select>  <br>
+  <label for="city">City:</label>
+    <input type="text" id="city" name="city" value="" placeholder="Chisinau"><br>
+    <label for="postal">Postal code:</label>
+    <input type="number" id="postal" name="postal" value="" ><br>
+ </fieldset>
+ <fieldset>
+    <legend>Preferences:</legend>
+    <label for="prefer">Preferred Contact Method:</label>
+    <input type="checkbox" id="check-email" name="check-email" value="Email">
+    <label for="check-email"> Email</label>
+    <input type="checkbox" id="check-phone" name="check-phone" value="Phone">
+    <label for="check-phone"> Phone</label>
+    <input type="checkbox" id="check-postal" name="check-postal" value="Postal Mail">
+    <label for="check-postal"> Postal Mail</label><br>
+    <label for="favcolor">Favorite Color:</label>
+  <input type="color" id="favcolor" name="favcolor" value="#000"><br><br>
+ </fieldset>
+ <fieldset>
+    <legend>Additional Details:</legend>
+    <label for="additional">How did you hear about us?</label>
+    <select name="add_info" id="add_info">
+        <option value="internet">Internet</option>
+        <option value="friend">Friend</option>
+        <option value="advertisement">"Advertisement</option>
+      </select><br>
+      <label for="feedback">Feedback/Comments:</label><br>
+    <textarea rows="3" cols="30" name="feedback" form="feedback"></textarea><br>
+ </fieldset>
+ <fieldset>
+    <legend>Profile:</legend>
+    <label for="file-input">Upload an image:</label>
+    <input type="file" id="file-input" name="file-input" accept="image/png, image/jpeg"><br>
+    <label for="homepage">Web Site:</label>
+    <input type="url" id="homepage" name="homepage"><br>
+    <label for="vol">User's experience level with HTML:</label>
+    <input type="range" id="vol" name="vol" min="0" max="10"><br>
+</fieldset>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>
